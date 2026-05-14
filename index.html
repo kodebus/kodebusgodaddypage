@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KodeBus — Domains, Hosting & Web Services</title>
+  <meta name="description" content="KodeBus offers domains, hosting, email, SSL certificates and website builder tools — all powered by GoDaddy infrastructure."/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--dark:#0F0A05;--dark2:#1A1008;--dark3:#221508;--primary:#FF8200;--amber:#FFB347;--rust:#C86400;--warm:#FF6B00;--light:#FFF7EE;--light2:#FFEFD8;--white:#FFFFFF;}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--dark);color:#D8C8B0;overflow-x:hidden;}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(15,10,5,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,130,0,0.12);}
+    .nl{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .nl svg{width:34px;height:34px;}
+    .nlt{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:2px;}
+    .nlt .k{color:#fff;}.nlt .b{color:var(--primary);}
+    .nlinks{display:flex;align-items:center;gap:32px;list-style:none;}
+    .nlinks a{color:#8A6A4A;text-decoration:none;font-size:14px;transition:color 0.2s;}
+    .nlinks a:hover{color:var(--primary);}
+    .ncta{padding:12px 28px;background:var(--primary);color:#FFFFFF;border-radius:4px;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.2s;}
+    .ncta:hover{background:var(--warm);transform:translateY(-1px);}
+
+    /* HERO */
+    #hero{min-height:100vh;padding-top:66px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+    .hl{display:flex;flex-direction:column;justify-content:center;padding:80px 4% 80px 8%;}
+    .heyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--primary);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+    .heyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--primary);}
+    .htitle{font-family:'Syne',sans-serif;font-size:clamp(34px,4.5vw,60px);font-weight:800;line-height:1.1;color:#fff;margin-bottom:22px;}
+    .htitle .ac{color:var(--primary);}
+    .hsub{font-size:17px;font-weight:300;color:#8A6A4A;line-height:1.75;max-width:460px;margin-bottom:38px;}
+    .hbtns{display:flex;gap:14px;flex-wrap:wrap;}
+    .bp{padding:14px 30px;background:var(--primary);color:#fff;border-radius:4px;font-weight:500;font-size:15px;text-decoration:none;transition:all 0.2s;}
+    .bp:hover{background:var(--warm);transform:translateY(-2px);}
+    .bs{padding:14px 30px;background:transparent;color:var(--primary);border:1px solid rgba(255,130,0,0.35);border-radius:4px;font-size:15px;text-decoration:none;transition:all 0.2s;}
+    .bs:hover{border-color:var(--primary);background:rgba(255,130,0,0.07);}
+    .hstats{margin-top:56px;display:flex;gap:36px;}
+    .hstat-v{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:#fff;}
+    .hstat-l{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:#5A3A1A;text-transform:uppercase;margin-top:3px;}
+    .hr{position:relative;}
+    #hcanvas{position:absolute;top:0;left:0;width:100%;height:100%;}
+
+    /* SERVICES */
+    #services{background:var(--light);padding:96px 8%;}
+    .slabel{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--rust);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+    .slabel::before{content:'';display:block;width:22px;height:1px;background:var(--rust);}
+    .stitle{font-family:'Syne',sans-serif;font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:14px;}
+    .ssub{font-size:16px;color:#8A6A4A;max-width:500px;line-height:1.75;margin-bottom:52px;}
+    .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+    .scard{background:#fff;border:1px solid #F0D8BC;border-radius:12px;padding:34px 28px;transition:all 0.25s;position:relative;overflow:hidden;}
+    .scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+    .scard:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(200,100,0,0.1);border-color:rgba(255,130,0,0.3);}
+    .scard:hover::before{transform:scaleX(1);}
+    .sicon{width:44px;height:44px;margin-bottom:22px;}
+    .scard h3{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;color:var(--dark);margin-bottom:10px;}
+    .scard p{font-size:14px;color:#8A6A4A;line-height:1.65;margin-bottom:22px;}
+    .slink{font-size:13px;font-weight:500;color:var(--primary);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap 0.2s;}
+    .slink:hover{gap:9px;}
+
+    /* WHY */
+    #why{background:var(--dark2);padding:96px 8%;}
+    #why .slabel{color:var(--amber);}#why .slabel::before{background:var(--amber);}
+    #why .stitle{color:#fff;}#why .ssub{color:#5A3A1A;}
+    .wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:52px;}
+    .wcard{padding:38px 30px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);border-radius:12px;transition:all 0.25s;}
+    .wcard:hover{background:rgba(255,130,0,0.06);border-color:rgba(255,130,0,0.2);transform:translateY(-3px);}
+    .wnum{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--primary);margin-bottom:18px;}
+    .wcard h3{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;color:#fff;margin-bottom:12px;}
+    .wcard p{font-size:14px;color:#5A3A1A;line-height:1.75;}
+
+    /* CTA */
+    #cta{background:var(--light);padding:96px 8%;text-align:center;}
+    #cta .slabel{justify-content:center;}#cta .slabel::before{display:none;}
+    #cta .stitle{margin:0 auto 16px;max-width:560px;}
+    #cta .ssub{margin:0 auto 36px;text-align:center;}
+    .cbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .blg{padding:16px 42px;font-size:16px;border-radius:6px;}
+    .cnote{margin-top:18px;font-size:12px;color:#B88A5A;font-family:'DM Mono',monospace;letter-spacing:1px;}
+
+    /* FOOTER */
+    footer{background:var(--dark);border-top:1px solid rgba(255,130,0,0.08);padding:44px 8%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+    .flinks{display:flex;gap:26px;list-style:none;}
+    .flinks a{font-size:13px;color:#3A2A1A;text-decoration:none;transition:color 0.2s;}
+    .flinks a:hover{color:var(--primary);}
+    .fcopy{font-size:12px;color:#3A2A1A;font-family:'DM Mono',monospace;}
+
+    /* REVEAL */
+    .rv{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .rv.on{opacity:1;transform:none;}
+    .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      #hero{grid-template-columns:1fr;}
+      .hr{display:none;}
+      .hl{padding:60px 6%;}
+      .nlinks li:not(:last-child){display:none;}
+      #nav{padding:0 4%;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nl">
+    <svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="68" rx="8" fill="#2A1508"/><line x1="34" y1="27" x2="34" y2="17" stroke="#8A5020" stroke-width="1.2"/><line x1="27" y1="34" x2="17" y2="34" stroke="#8A5020" stroke-width="1.2"/><line x1="41" y1="34" x2="51" y2="34" stroke="#8A5020" stroke-width="1.2"/><line x1="34" y1="41" x2="34" y2="51" stroke="#8A5020" stroke-width="1.2"/><line x1="37" y1="17" x2="51" y2="17" stroke="#8A5020" stroke-width="1.2"/><line x1="51" y1="17" x2="51" y2="30" stroke="#8A5020" stroke-width="1.2"/><circle cx="34" cy="34" r="9" fill="#FF8200"/><circle cx="34" cy="15" r="5" fill="#FFB347"/><circle cx="15" cy="34" r="5" fill="#C86400"/><circle cx="53" cy="34" r="5" fill="#FFB347"/><circle cx="34" cy="53" r="5" fill="#C86400"/></svg>
+    <span class="nlt"><span class="k">KODE</span><span class="b">BUS</span></span>
+  </a>
+  <ul class="nlinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why KodeBus</a></li>
+    <li><a href="#cta">Contact</a></li>
+    <li><a href="https://kodebus.com/store" class="ncta">Visit Store</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hl">
+    <div class="heyebrow">Powered by GoDaddy</div>
+    <h1 class="htitle">Your Digital<br>Business Starts<br><span class="ac">Here.</span></h1>
+    <p class="hsub">Domains, hosting, email, SSL and more — all under one roof, delivered with a personal touch.</p>
+    <div class="hbtns">
+      <a href="#services" class="bp blg">Explore Services</a>
+      <a href="#cta" class="bs blg">Get in Touch</a>
+    </div>
+    <div class="hstats">
+      <div><div class="hstat-v">99.9%</div><div class="hstat-l">Uptime</div></div>
+      <div><div class="hstat-v">24/7</div><div class="hstat-l">Support</div></div>
+      <div><div class="hstat-v">GoDaddy</div><div class="hstat-l">Powered</div></div>
+    </div>
+  </div>
+  <div class="hr"><canvas id="hcanvas"></canvas></div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="slabel rv">Our Services</div>
+  <h2 class="stitle rv">Everything Your<br>Business Needs</h2>
+  <p class="ssub rv">From your first domain to a fully running business online — KodeBus has every tool you need.</p>
+  <div class="sgrid">
+    <div class="scard rv d1">
+      <svg class="sicon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="18" stroke="#FF8200" stroke-width="1.4"/><ellipse cx="22" cy="22" rx="7" ry="18" stroke="#FF8200" stroke-width="1.4"/><line x1="4" y1="22" x2="40" y2="22" stroke="#FF8200" stroke-width="1.4"/><line x1="6" y1="14" x2="38" y2="14" stroke="#FF8200" stroke-width="1" opacity="0.4"/><line x1="6" y1="30" x2="38" y2="30" stroke="#FF8200" stroke-width="1" opacity="0.4"/></svg>
+      <h3>Domains & Hosting</h3>
+      <p>Secure your perfect domain and get reliable web hosting to keep your business online around the clock.</p>
+      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+    </div>
+    <div class="scard rv d2">
+      <svg class="sicon" viewBox="0 0 44 44" fill="none"><rect x="4" y="10" width="36" height="24" rx="3" stroke="#FFB347" stroke-width="1.4"/><polyline points="4,10 22,24 40,10" stroke="#FFB347" stroke-width="1.4" stroke-linejoin="round"/><line x1="4" y1="34" x2="16" y2="24" stroke="#FFB347" stroke-width="1" opacity="0.4"/><line x1="40" y1="34" x2="28" y2="24" stroke="#FFB347" stroke-width="1" opacity="0.4"/></svg>
+      <h3>Email & Microsoft 365</h3>
+      <p>Professional email that matches your domain, plus the full Microsoft 365 suite to power your team.</p>
+      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+    </div>
+    <div class="scard rv d3">
+      <svg class="sicon" viewBox="0 0 44 44" fill="none"><path d="M22 3 L36 9 L36 22 C36 31 22 41 22 41 C22 41 8 31 8 22 L8 9 Z" stroke="#C86400" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 22 L20 26 L28 18" stroke="#C86400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>SSL Certificates</h3>
+      <p>Protect your site and your customers' data with industry-standard SSL encryption and trust badges.</p>
+      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+    </div>
+    <div class="scard rv d4">
+      <svg class="sicon" viewBox="0 0 44 44" fill="none"><rect x="3" y="3" width="17" height="17" rx="2" stroke="#FF8200" stroke-width="1.4"/><rect x="24" y="3" width="17" height="17" rx="2" stroke="#FFB347" stroke-width="1.4"/><rect x="3" y="24" width="17" height="17" rx="2" stroke="#FFB347" stroke-width="1.4"/><rect x="24" y="24" width="17" height="17" rx="2" stroke="#FF8200" stroke-width="1.4"/><line x1="11.5" y1="8" x2="11.5" y2="15" stroke="#FF8200" stroke-width="1.2" opacity="0.5"/><line x1="8" y1="11.5" x2="15" y2="11.5" stroke="#FF8200" stroke-width="1.2" opacity="0.5"/></svg>
+      <h3>Website Builder</h3>
+      <p>Build a stunning website in minutes with easy drag-and-drop tools — no coding experience required.</p>
+      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY KODEBUS -->
+<section id="why">
+  <div class="slabel rv">Why KodeBus</div>
+  <h2 class="stitle rv">The Smart Choice<br>for Your Business</h2>
+  <p class="ssub rv">We bring GoDaddy's world-class infrastructure together with the personal service your business deserves.</p>
+  <div class="wgrid">
+    <div class="wcard rv d1"><div class="wnum">01</div><h3>Enterprise Infrastructure</h3><p>Your business runs on GoDaddy's platform — trusted by millions worldwide for speed, reliability, and rock-solid security.</p></div>
+    <div class="wcard rv d2"><div class="wnum">02</div><h3>Your Brand, Your Way</h3><p>Every service delivered under the KodeBus brand — a consistent, professional experience from the moment you sign up.</p></div>
+    <div class="wcard rv d3"><div class="wnum">03</div><h3>Everything in One Place</h3><p>No juggling multiple providers. Domains, hosting, email, SSL and website tools — all available and managed through KodeBus.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="slabel rv">Get Started Today</div>
+  <h2 class="stitle rv">Ready to Get<br>Your Business Online?</h2>
+  <p class="ssub rv">Visit the KodeBus store and find the perfect domain, hosting plan, and tools for your business.</p>
+  <div class="cbtns rv">
+    <a href="https://kodebus.com/store" class="bp blg">Visit the KodeBus Store</a>
+    <a href="mailto:info@kodebus.com" class="bs blg">Contact Us</a>
+  </div>
+  <p class="cnote rv">Powered by GoDaddy Infrastructure · kodebus.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#hero" class="nl">
+    <svg width="30" height="30" viewBox="0 0 68 68"><rect width="68" height="68" rx="8" fill="#2A1508"/><circle cx="34" cy="34" r="9" fill="#FF8200"/><circle cx="34" cy="15" r="5" fill="#FFB347"/><circle cx="15" cy="34" r="5" fill="#C86400"/><circle cx="53" cy="34" r="5" fill="#FFB347"/><circle cx="34" cy="53" r="5" fill="#C86400"/></svg>
+    <span class="nlt"><span class="k">KODE</span><span class="b">BUS</span></span>
+  </a>
+  <ul class="flinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why KodeBus</a></li>
+    <li><a href="mailto:info@kodebus.com">Contact</a></li>
+    <li><a href="https://kodebus.com/store">Visit Store</a></li>
+  </ul>
+  <span class="fcopy">© 2026 KodeBus · kodebus.com</span>
+</footer>
+
+<script>
+const canvas=document.getElementById('hcanvas');
+const ctx=canvas.getContext('2d');
+function resize(){const p=canvas.parentElement;canvas.width=p.clientWidth;canvas.height=p.clientHeight;}
+resize();
+window.addEventListener('resize',()=>{resize();initNodes();});
+const colors=['#FF8200','#FFB347','#C86400','#FF6B00'];
+let nodes=[],pkts=[];
+function initNodes(){
+  nodes=[];
+  const cx=canvas.width/2,cy=canvas.height/2;
+  nodes.push({x:cx,y:cy,bx:cx,by:cy,r:14,color:'#FF8200',phase:0,spd:0.0008,ax:0,ay:0});
+  for(let i=0;i<6;i++){
+    const a=(i/6)*Math.PI*2,d=Math.min(canvas.width,canvas.height)*0.27;
+    const bx=cx+Math.cos(a)*d,by=cy+Math.sin(a)*d;
+    nodes.push({x:bx,y:by,bx,by,r:7+Math.random()*5,color:colors[i%4],phase:Math.random()*Math.PI*2,spd:0.0004+Math.random()*0.0005,ax:5+Math.random()*8,ay:5+Math.random()*8});
+  }
+  for(let i=0;i<5;i++){
+    const a=(i/5)*Math.PI*2+0.4,d=Math.min(canvas.width,canvas.height)*0.43;
+    const bx=cx+Math.cos(a)*d,by=cy+Math.sin(a)*d;
+    nodes.push({x:bx,y:by,bx,by,r:3+Math.random()*4,color:colors[i%4],phase:Math.random()*Math.PI*2,spd:0.0003+Math.random()*0.0003,ax:7+Math.random()*10,ay:7+Math.random()*10});
+  }
+  pkts=[];
+  for(let i=1;i<=6;i++) pkts.push({from:0,to:i,prog:Math.random(),spd:0.005+Math.random()*0.005});
+  for(let i=1;i<=5;i++) pkts.push({from:i,to:i<6?i+1:1,prog:Math.random(),spd:0.004+Math.random()*0.004});
+}
+initNodes();
+let t0=null;
+function draw(ts){
+  if(!t0)t0=ts;
+  const t=ts-t0;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  nodes.forEach((n,i)=>{
+    if(i===0)return;
+    n.x=n.bx+Math.sin(t*n.spd+n.phase)*n.ax;
+    n.y=n.by+Math.cos(t*n.spd*0.85+n.phase)*n.ay;
+  });
+  for(let i=1;i<=6;i++){ctx.beginPath();ctx.moveTo(nodes[0].x,nodes[0].y);ctx.lineTo(nodes[i].x,nodes[i].y);ctx.strokeStyle='rgba(180,90,0,0.18)';ctx.lineWidth=1;ctx.stroke();}
+  for(let i=1;i<=6;i++){const j=i<6?i+1:1;ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.strokeStyle='rgba(180,90,0,0.09)';ctx.lineWidth=1;ctx.stroke();}
+  pkts.forEach(p=>{
+    p.prog+=p.spd;if(p.prog>1)p.prog=0;
+    const f=nodes[p.from],t2=nodes[p.to];if(!f||!t2)return;
+    const px=f.x+(t2.x-f.x)*p.prog,py=f.y+(t2.y-f.y)*p.prog;
+    ctx.beginPath();ctx.arc(px,py,2.5,0,Math.PI*2);ctx.fillStyle='#FF8200';ctx.globalAlpha=0.85;ctx.fill();ctx.globalAlpha=1;
+  });
+  nodes.forEach((n,i)=>{
+    const gr=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*2.8);
+    gr.addColorStop(0,n.color+'2A');gr.addColorStop(1,'transparent');
+    ctx.beginPath();ctx.arc(n.x,n.y,n.r*2.8,0,Math.PI*2);ctx.fillStyle=gr;ctx.fill();
+    const r=i===0?n.r+Math.sin(t*0.0015)*3:n.r;
+    ctx.beginPath();ctx.arc(n.x,n.y,r,0,Math.PI*2);
+    if(i===0){ctx.fillStyle=n.color;ctx.fill();}
+    else{ctx.fillStyle=n.color+'1A';ctx.fill();ctx.strokeStyle=n.color+'99';ctx.lineWidth=1.5;ctx.stroke();}
+  });
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:0.12});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
