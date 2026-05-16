@@ -92,13 +92,47 @@
     .rv.on{opacity:1;transform:none;}
     .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
 
-    /* RESPONSIVE */
+    /* RESPONSIVE — iPhone & Mobile */
     @media(max-width:768px){
-      #hero{grid-template-columns:1fr;}
-      .hr{display:none;}
-      .hl{padding:60px 6%;}
+      #nav{padding:0 5%;height:60px;}
+      .nlt{font-size:17px;}
+      .nl svg{width:28px;height:28px;}
       .nlinks li:not(:last-child){display:none;}
-      #nav{padding:0 4%;}
+      .nlinks a.ncta{padding:9px 18px;font-size:13px;}
+      #hero{grid-template-columns:1fr;min-height:auto;padding-top:60px;}
+      .hr{display:none;}
+      .hl{padding:50px 6% 60px;}
+      .heyebrow{font-size:10px;}
+      .htitle{font-size:clamp(30px,8vw,44px);}
+      .hsub{font-size:15px;max-width:100%;}
+      .bp,.bs{padding:13px 24px;font-size:14px;width:100%;text-align:center;}
+      .hbtns{flex-direction:column;}
+      .hstats{gap:24px;margin-top:40px;}
+      .hstat-v{font-size:18px;}
+      .hstat-l{font-size:9px;}
+      #services{padding:64px 6%;}
+      .sgrid{grid-template-columns:1fr;}
+      .scard{padding:28px 22px;}
+      .stitle{font-size:clamp(24px,6vw,36px);}
+      .ssub{font-size:15px;max-width:100%;}
+      #why{padding:64px 6%;}
+      .wgrid{grid-template-columns:1fr;}
+      .wcard{padding:28px 22px;}
+      .wcard h3{font-size:18px;}
+      .wcard p{font-size:14px;}
+      #cta{padding:64px 6%;}
+      .cbtns{flex-direction:column;align-items:center;}
+      .bp.blg,.bs.blg{padding:14px 28px;font-size:15px;width:100%;max-width:320px;text-align:center;}
+      footer{flex-direction:column;align-items:flex-start;padding:36px 6%;gap:16px;}
+      .flinks{flex-wrap:wrap;gap:16px;}
+      .flinks a{font-size:14px;}
+      .fcopy{font-size:11px;}
+      .slabel{font-size:10px;}
+    }
+    @media(max-width:400px){
+      .htitle{font-size:28px;}
+      .nlt{font-size:15px;}
+      .hstats{flex-wrap:wrap;gap:20px;}
     }
   </style>
 </head>
@@ -114,7 +148,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why KodeBus</a></li>
     <li><a href="#cta">Contact</a></li>
-    <li><a href="https://kodebus.com/store" class="ncta">Visit Store</a></li>
+    <li><a href="https://shop.kodebus.com" class="ncta">Visit Store</a></li>
   </ul>
 </nav>
 
@@ -147,25 +181,25 @@
       <svg class="sicon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="18" stroke="#FF8200" stroke-width="1.4"/><ellipse cx="22" cy="22" rx="7" ry="18" stroke="#FF8200" stroke-width="1.4"/><line x1="4" y1="22" x2="40" y2="22" stroke="#FF8200" stroke-width="1.4"/><line x1="6" y1="14" x2="38" y2="14" stroke="#FF8200" stroke-width="1" opacity="0.4"/><line x1="6" y1="30" x2="38" y2="30" stroke="#FF8200" stroke-width="1" opacity="0.4"/></svg>
       <h3>Domains & Hosting</h3>
       <p>Secure your perfect domain and get reliable web hosting to keep your business online around the clock.</p>
-      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+      <a href="https://shop.kodebus.com" class="slink">Get Started →</a>
     </div>
     <div class="scard rv d2">
       <svg class="sicon" viewBox="0 0 44 44" fill="none"><rect x="4" y="10" width="36" height="24" rx="3" stroke="#FFB347" stroke-width="1.4"/><polyline points="4,10 22,24 40,10" stroke="#FFB347" stroke-width="1.4" stroke-linejoin="round"/><line x1="4" y1="34" x2="16" y2="24" stroke="#FFB347" stroke-width="1" opacity="0.4"/><line x1="40" y1="34" x2="28" y2="24" stroke="#FFB347" stroke-width="1" opacity="0.4"/></svg>
       <h3>Email & Microsoft 365</h3>
       <p>Professional email that matches your domain, plus the full Microsoft 365 suite to power your team.</p>
-      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+      <a href="https://shop.kodebus.com" class="slink">Get Started →</a>
     </div>
     <div class="scard rv d3">
       <svg class="sicon" viewBox="0 0 44 44" fill="none"><path d="M22 3 L36 9 L36 22 C36 31 22 41 22 41 C22 41 8 31 8 22 L8 9 Z" stroke="#C86400" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 22 L20 26 L28 18" stroke="#C86400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3>SSL Certificates</h3>
       <p>Protect your site and your customers' data with industry-standard SSL encryption and trust badges.</p>
-      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+      <a href="https://shop.kodebus.com" class="slink">Get Started →</a>
     </div>
     <div class="scard rv d4">
       <svg class="sicon" viewBox="0 0 44 44" fill="none"><rect x="3" y="3" width="17" height="17" rx="2" stroke="#FF8200" stroke-width="1.4"/><rect x="24" y="3" width="17" height="17" rx="2" stroke="#FFB347" stroke-width="1.4"/><rect x="3" y="24" width="17" height="17" rx="2" stroke="#FFB347" stroke-width="1.4"/><rect x="24" y="24" width="17" height="17" rx="2" stroke="#FF8200" stroke-width="1.4"/><line x1="11.5" y1="8" x2="11.5" y2="15" stroke="#FF8200" stroke-width="1.2" opacity="0.5"/><line x1="8" y1="11.5" x2="15" y2="11.5" stroke="#FF8200" stroke-width="1.2" opacity="0.5"/></svg>
       <h3>Website Builder</h3>
       <p>Build a stunning website in minutes with easy drag-and-drop tools — no coding experience required.</p>
-      <a href="https://kodebus.com/store" class="slink">Get Started →</a>
+      <a href="https://shop.kodebus.com" class="slink">Get Started →</a>
     </div>
   </div>
 </section>
@@ -188,7 +222,7 @@
   <h2 class="stitle rv">Ready to Get<br>Your Business Online?</h2>
   <p class="ssub rv">Visit the KodeBus store and find the perfect domain, hosting plan, and tools for your business.</p>
   <div class="cbtns rv">
-    <a href="https://kodebus.com/store" class="bp blg">Visit the KodeBus Store</a>
+    <a href="https://shop.kodebus.com" class="bp blg">Visit the KodeBus Store</a>
     <a href="mailto:info@kodebus.com" class="bs blg">Contact Us</a>
   </div>
   <p class="cnote rv">Powered by GoDaddy Infrastructure · kodebus.com</p>
@@ -204,7 +238,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why KodeBus</a></li>
     <li><a href="mailto:info@kodebus.com">Contact</a></li>
-    <li><a href="https://kodebus.com/store">Visit Store</a></li>
+    <li><a href="https://shop.kodebus.com">Visit Store</a></li>
   </ul>
   <span class="fcopy">© 2026 KodeBus · kodebus.com</span>
 </footer>
